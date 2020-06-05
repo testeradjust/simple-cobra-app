@@ -1,1 +1,7 @@
+# more info:
+# https://config.travis-ci.com/
+
 language: go
+
+git:
+  depth: 1
