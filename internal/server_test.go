@@ -11,6 +11,7 @@ func TestNewServer(t *testing.T) {
 	require.NotNil(t, server)
 	assert.Equal(t, 1, server.Version)
 	assert.Equal(t, "s1", server.Name)
+	assert.Equal(t, "n/a", server.Name2)
 }
 
 func TestServer_IncrementVersion(t *testing.T) {
