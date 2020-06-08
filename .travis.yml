@@ -10,5 +10,14 @@ go:
 git:
   depth: 1
 
+jobs:
+  include:
+    - stage: test
+      script: go test -v ./cmd
+    - # test
+      script: go test -v ./internal
+    - stage: simple
+      script: ./simulate-sleep.sh
+
 notifications:
   email: false
