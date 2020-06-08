@@ -19,4 +19,6 @@ func TestServer_IncrementVersion(t *testing.T) {
 	assert.Equal(t, 1, server.Version)
 	server.IncrementVersion()
 	assert.Equal(t, 2, server.Version)
+	server.IncrementVersion()
+	assert.Equal(t, 3, server.Version)
 }
