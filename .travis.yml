@@ -1,7 +1,16 @@
 # more info:
 # https://config.travis-ci.com/
+dist: bionic
+
+script: echo "build starting ..."
 
 language: go
 
+go:
+  - 1.14.x
+
 git:
   depth: 1
+
+notifications:
+  email: false
