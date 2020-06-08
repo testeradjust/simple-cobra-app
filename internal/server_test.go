@@ -29,5 +29,5 @@ func TestServer_IncrementVersion(t *testing.T) {
 func TestServer_SetActive(t *testing.T) {
 	server := NewServer(1, "s1")
 	require.NotNil(t, server)
-	assert.True(t, server.IsActive)
+	assert.False(t, server.IsActive)
 }
