@@ -78,3 +78,11 @@ func initConfig() {
 		fmt.Println("Using config file:", viper.ConfigFileUsed())
 	}
 }
+
+func DummyViperFunc() *viper.Viper {
+	return viper.New()
+}
+
+func DummyHomeDirFunc() (string, error) {
+	return homedir.Expand("~/testdir")
+}
