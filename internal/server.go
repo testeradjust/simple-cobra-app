@@ -6,6 +6,7 @@ type Server struct {
 	IsActive bool
 	Version int
 	Name string
+	Name2 string
 }
 
 func NewServer(version int, name string) *Server {
@@ -13,6 +14,7 @@ func NewServer(version int, name string) *Server {
 		IsActive: false,
 		Version: version,
 		Name: name,
+		Name2: "n/a",
 	}
 	return server
 }
