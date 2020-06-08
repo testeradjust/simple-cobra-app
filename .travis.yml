@@ -2,8 +2,6 @@
 # https://config.travis-ci.com/
 dist: bionic
 
-echo "build starting ..."
-
 language: go
 
 go:
