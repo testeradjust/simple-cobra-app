@@ -12,3 +12,7 @@ func NewServer(version int, name string) *Server {
 	}
 	return server
 }
+
+func (s *Server) IncrementVersion() {
+	s.Version++
+}
