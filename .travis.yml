@@ -16,17 +16,10 @@ jobs:
       script: go test -v ./cmd
     - # test
       install:
-        # download
-        - wget -O aerospike.tgz 'https://www.aerospike.com/download/server/latest/artifact/ubuntu18'
-        # untar
-        - tar xvzf aerospike.tgz # will extract: aerospike-server-community-5.0.0.4-ubuntu18.04
-        # install
-        - cd $(ls | grep "aerospike-server-community")
-        - sudo ./asinstall
+        # setup aerospike
+        - ./travis/aerospike-setup.sh
         # start aerospike
         - sudo systemctl start aerospike
-        # go back to source
-        - cd ..
       script: go test -v ./internal
     - stage: simple
       script: ./simulate-sleep.sh
