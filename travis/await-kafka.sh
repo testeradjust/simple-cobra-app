@@ -2,6 +2,8 @@
 
 max_wait_seconds=60
 
+echo "waiting for kafka start"
+
 i=0
 while [[ ${i} -le ${max_wait_seconds} ]]
 do
