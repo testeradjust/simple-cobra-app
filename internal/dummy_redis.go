@@ -27,6 +27,9 @@ func NewDummyRedis(host string, port int) (*DummyRedis, error) {
 	}
 
 	pong, err := client.Ping(ctx).Result()
+	if err != nil {
+		return nil, fmt.Errorf("failed to get PONG: %s", err)
+	}
 	if pong != "PONG" {
 		return nil, errors.New("failed to get PONG")
 	}
