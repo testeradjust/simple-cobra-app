@@ -17,6 +17,7 @@ jobs:
     - # test
       services:
         - docker
+        - redis
       before_install:
         - ./travis/setup-kafka.sh
         - ./travis/await-kafka.sh
