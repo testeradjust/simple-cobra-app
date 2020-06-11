@@ -19,6 +19,7 @@ jobs:
         - docker
       before_install:
         - ./travis/setup-kafka.sh
+        - ./travis/await-kafka.sh
       install:
         # setup aerospike
         - ./travis/aerospike-setup.sh
