@@ -35,8 +35,6 @@ jobs:
         # wait for aerospike start
         - ./travis/await-aerospike.sh
       script: go test -v ./internal
-    - stage: simple
-      script: ./simulate-sleep.sh
 
 notifications:
   email: false
