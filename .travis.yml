@@ -18,10 +18,11 @@ jobs:
       services:
         - docker
         - redis
-      before_install:
-        - ./travis/setup-kafka.sh
-        - ./travis/await-kafka.sh
       install:
+        # setup kafka
+        - ./travis/setup-kafka.sh
+        # wait for kafka start
+        - ./travis/await-kafka.sh
         # setup aerospike
         - ./travis/aerospike-setup.sh
         # start aerospike
