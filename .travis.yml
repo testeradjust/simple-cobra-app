@@ -12,6 +12,13 @@ git:
 
 jobs:
   include:
+    - stage: static check
+      install:
+        # install golangci lint
+        - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.27.0
+      script:
+        # run golangci lint checks
+        - ./bin/golangci-lint run
     - stage: test
       script: go test -v ./cmd
     - # test
@@ -28,8 +35,6 @@ jobs:
         # wait for aerospike start
         - ./travis/await-aerospike.sh
       script: go test -v ./internal
-    - stage: simple
-      script: ./simulate-sleep.sh
 
 notifications:
   email: false
