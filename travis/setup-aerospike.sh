@@ -9,5 +9,7 @@ tar xvzf aerospike.tgz # will extract: aerospike-server-community-5.0.0.4-ubuntu
 # install
 cd $(ls | grep "aerospike-server-community")
 sudo ./asinstall
+# start aerospike
+sudo systemctl start aerospike
 # go back to source
 cd ..

@@ -24,9 +24,9 @@ jobs:
         # wait for kafka start
         - ./travis/await-kafka.sh
         # setup aerospike
-        - ./travis/aerospike-setup.sh
-        # start aerospike
-        - sudo systemctl start aerospike
+        - ./travis/setup-aerospike.sh
+        # wait for aerospike start
+        - ./travis/await-aerospike.sh
       script: go test -v ./internal
     - stage: simple
       script: ./simulate-sleep.sh
