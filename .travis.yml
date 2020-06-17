@@ -25,6 +25,7 @@ jobs:
       services:
         - docker
         - redis
+        - postgresql
       install:
         # setup kafka
         - ./travis/setup-kafka.sh
@@ -34,6 +35,8 @@ jobs:
         - ./travis/setup-aerospike.sh
         # wait for aerospike start
         - ./travis/await-aerospike.sh
+        # setup postgreSQL
+        - ./travis/setup-postgres.sh
       script: go test -v ./internal
 
 notifications:
