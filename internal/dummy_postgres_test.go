@@ -8,13 +8,13 @@ import (
 )
 
 func TestNewDummyPostgres(t *testing.T) {
-	dp, err := NewDummyPostgres("localhost", "dummydb", "dummydb", 5432)
+	dp, err := NewDummyPostgres("localhost", "dummydb", "dummydbps", "dummydb", 5432)
 	require.NoError(t, err)
 	assert.NotNil(t, dp)
 }
 
 func TestDummyPostgres_TestConnection(t *testing.T) {
-	dp, err := NewDummyPostgres("localhost", "dummydb", "dummydb", 5432)
+	dp, err := NewDummyPostgres("localhost", "dummydb", "dummydbps", "dummydb", 5432)
 	require.NoError(t, err)
 	assert.NotNil(t, dp)
 

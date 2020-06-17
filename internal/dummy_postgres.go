@@ -11,10 +11,10 @@ type DummyPostgres struct {
 	db *sql.DB
 }
 
-func NewDummyPostgres(host, user, dbName string, port int) (*DummyPostgres, error) {
+func NewDummyPostgres(host, user, password, dbName string, port int) (*DummyPostgres, error) {
 	connStr := fmt.Sprintf(
-		"host=%s port=%d user=%s dbname=%s sslmode=disable",
-		host, port, user, dbName,
+		"host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+		host, port, user, password, dbName,
 	)
 
 	db, err := sql.Open("postgres", connStr)
