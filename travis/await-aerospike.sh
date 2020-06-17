@@ -12,6 +12,7 @@ do
   # curl on aerospike will produce: curl: (56) Recv failure: Connection reset by peer
   # with exit status 56
   if [[ $? == 56 ]]; then
+    echo "aerospike seems started <3"
     exit 0
   else
     i=$(($i + 1))
