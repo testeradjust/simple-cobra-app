@@ -2,6 +2,8 @@
 set -o pipefail # abort on errors in pipeline
 set -e          # abort on errors
 
+echo "aerospike setup started ..."
+
 # download, for ubuntu 18.04 bionic
 wget -O aerospike.tgz 'https://www.aerospike.com/download/server/latest/artifact/ubuntu18'
 # untar
@@ -13,3 +15,5 @@ sudo ./asinstall
 sudo systemctl start aerospike
 # go back to source
 cd ..
+
+echo "aerospike setup done <3"
