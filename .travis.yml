@@ -12,13 +12,15 @@ git:
 
 jobs:
   include:
-    - stage: static check
+    - stage: static and easyjson checks
       install:
         # install golangci lint
         - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.27.0
       script:
         # run golangci lint checks
         - ./bin/golangci-lint run
+    - # easy json stage
+      script: ./travis/ez_json.sh
     - stage: test
       script: go test -v ./cmd
     - # test
