@@ -7,6 +7,7 @@ require (
 	github.com/aerospike/aerospike-client-go v3.0.0+incompatible
 	github.com/go-redis/redis/v8 v8.0.0-beta.4
 	github.com/lib/pq v1.7.0
+	github.com/mailru/easyjson v0.7.1
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/onsi/ginkgo v1.12.3 // indirect
 	github.com/spf13/cobra v1.0.0
