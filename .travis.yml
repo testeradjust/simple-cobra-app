@@ -20,7 +20,12 @@ jobs:
         # run golangci lint checks
         - ./bin/golangci-lint run
     - # easy json stage
-      script: ./travis/ez_json.sh
+      install:
+        # install easyjson
+        - go get -u github.com/mailru/easyjson/...
+      script:
+        # easyjson generate
+        - easyjson -all $(find . -name "ez_json*")
     - stage: test
       script: go test -v ./cmd
     - # test
