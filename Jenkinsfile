@@ -6,7 +6,7 @@ pipeline {
                 sh 'echo "Staring CI ...."'
                 sh '''
                     echo "Testing CMD dir ..."
-                    go test -v ./cmd/...'
+                    go test -v ./cmd/...
                 '''
             }
         }
