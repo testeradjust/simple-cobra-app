@@ -1,13 +1,18 @@
 pipeline {
     agent any
     stages('Test Stage 1') {
-        stage('build') {
+        stage('Test CMD') {
             steps {
-                sh 'echo "Staring CI ...."'
+                sh 'echo "Staring CI ..."'
                 sh '''
                     echo "Testing CMD dir ..."
                     go test -v ./cmd/...
                 '''
+            }
+        }
+        stage('Test Internal') {
+            steps {
+                sh 'go test -v ./internal/...'
             }
         }
     }
